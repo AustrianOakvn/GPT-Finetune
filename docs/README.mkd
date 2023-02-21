@@ -1,0 +1,76 @@
+# Building internal chatbot
+
+## Background and context of project:
+
+
+## Aims and objectives
+
+
+
+## Literature review
+- Semantic Search
+
+Example: Searching for legal cases in a law firm.
+Try to match queries to relevant documents based on meaning rather than on pure syntax. 
+
+Look for a result with a sentence embedding that is close to the sentence embedding of the query.
+
+- Text Extraction ()
+- Language Modeling (no need label)
+
+If you want the model to return results that could be anything and not contained in the text then you could use language modeling
+
+
+## Resources required
+### Data Source:
+- HBLAB Wiki: https://wiki.hblab.vn/index.php?title=Main_Page
+
+### Pretrained Model:
+- NlpHUST gpt-2 Vietnamese: https://huggingface.co/NlpHUST/gpt2-vietnamese
+- NlpHUST gpt-neo-vi-small: https://huggingface.co/NlpHUST/gpt-neo-vi-small
+- VietAI gpt-j-6B-vietnamese-news: https://huggingface.co/VietAI/gpt-j-6B-vietnamese-news
+- VietAI gpt-neo-1.3B-vietnamese-news: https://huggingface.co/VietAI/gpt-neo-1.3B-vietnamese-news
+- imthanhlv gpt-2-news: https://huggingface.co/imthanhlv/gpt2news
+
+### Semantic Search Techniques:
+
+- TF-IDF, BM25
+- Retrieve and Rerank: https://www.sbert.net/examples/applications/retrieve_rerank/README.html; https://huggingface.co/keepitreal/vietnamese-sbert
+
+<!-- ![Alt text](assets/retrieve_rerank.webp) -->
+
+<img src="assets/retrieve_rerank.webp" width="600" height="300">
+
+- Semantic Search: https://www.sbert.net/examples/applications/semantic-search/README.html
+
+<img src="assets/sem_search.webp"  width="600" height="200">
+
+Quora Semantic Search: 
+Wikipedia Semantic Search
+
+## Timetable
+
+### 1, Data preparation
+- Collect raw data from HBLAB Wiki
+- Exploratory Data Analysis and Statistical Data Analysis of the crawled dataset
+- Preprocess, Clean, filter dataset
+<!-- - (Build, label dataset)  -->
+
+### 2, Training, fine-tuning
+- Fine-tune GPT model that was trained on a large corpus of Vietnamese text.
+
+### 3, Hyperparameters optimization
+- Need to spend extra time to find the appropriate hyperparameters due to significant changes of the output based on the methods which are used in the decoder.
+- Hyperparams needed to be considered: 
+    - Decoding Scheme: Greedy Search, Beam Search 
+    - Sampling Method: Random, Sampling with Temparature, Top-k Sampling, Nucleus Sampling (Top-p sampling)
+
+### 4, Build pipeline and integrate model to existing system
+- Pipeline to automate the process when new content is added to the Wiki page
+- Create a chatbot and integrate into ChatWorks
+
+### 5, Evaluation with human interaction
+- Let user use for a period of time and collect the response to evaluate the performance of the model
+
+## References
+

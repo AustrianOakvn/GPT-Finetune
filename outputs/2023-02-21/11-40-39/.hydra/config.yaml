@@ -1,0 +1,11 @@
+gpt_2_hparams:
+  model_id: gpt2
+  epochs: 5
+  start_epoch: 0
+  learning_rate: 0.0005
+  batch_size: 2
+  warmup_steps: 100
+  early_stop: 20
+  epsilon: 1.0e-08
+  seed_val: 42
+  checkpoint_dir: checkpoints
