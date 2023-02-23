@@ -1,5 +1,8 @@
 hblab_wiki:
-    raw: "data/raw/hblab-wiki-full.txt"
-    raw_small: "data/raw/hblab-wiki.txt"
-    interim: "data/interim/hblab-wiki-df.csv"
-    interim_small: "data/interim/hblab-wiki-small-df.csv"
+    raw: 
+        full: "data/raw/hblab-wiki-full.txt"
+        small: "data/raw/hblab-wiki.txt"
+        full_with_label: "data/raw/hblab_wiki-with-label.csv"
+    interim:
+        full: "data/interim/hblab-wiki-df.csv"
+        small: "data/interim/hblab-wiki-small-df.csv"
